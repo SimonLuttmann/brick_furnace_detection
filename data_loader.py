@@ -61,5 +61,6 @@ def load_split(path: str, load_into_ram: bool = True, verbose: bool = True):
 
     
 if __name__ == "__main__":
-    example_path = '/home/simon/Documents/studium/deep_learning/case_study/brick_furnace_detection/data/Brick_Data_Train/Brick_Data_Train'
+    slurm_tmpdir = os.environ.get('SLURM_TMPDIR', '.')
+    example_path = '/scratch/tmp/sluttman/Brick_Data_Train/'
     X_train, X_test, y_train, y_test, X_train_path, X_test_path, y_train_path, y_test_path = load_split(example_path, load_into_ram=True)
