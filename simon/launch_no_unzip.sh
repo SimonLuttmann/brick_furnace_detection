@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --time=00:10:00
+#SBATCH --time=03:00:00
 #SBATCH --output=/home/s/sluttman/brick_furnace_detection/simon/logs/kiln-%j.log
 #SBATCH --error=/home/s/sluttman/brick_furnace_detection/simon/logs/kiln-%j.err
 
@@ -22,4 +22,4 @@ cd $SLURM_TMPDIR
 
 echo "Starting training"
 
-python3 /home/s/sluttman/brick_furnace_detection/data_loader.py
+python3 /home/s/sluttman/brick_furnace_detection/simon/simple_model/simple_model.py
