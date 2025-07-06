@@ -30,7 +30,7 @@ def validate_paths(storage_path, creator_name, model_name):
         os.makedirs(creator_path)
 
     model_dir = os.path.join(creator_path, model_name)
-    if False:  # os.path.exists(model_dir):
+    if os.path.exists(model_dir):
         raise ValueError(f"Model directory '{model_dir}' already exists.")
     else:
         os.makedirs(model_dir, exist_ok=True)
