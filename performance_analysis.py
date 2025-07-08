@@ -28,8 +28,8 @@ def calculate_and_log_performance(all_labels, all_preds, num_classes, epoch, wri
     # Optional: Get precision, recall, f1 directly from sklearn (should match your calculations)
     precision_class_wise, recall_class_wise, f1_class_wise, support = precision_recall_fscore_support(all_labels, all_preds, average=None)
 
-
-    weighted_metrics_sklearn = precision_recall_fscore_support(all_labels, all_preds, average='weighted')
+    classes_to_include = [1,2,3,4,5,6,7,8]
+    weighted_metrics_sklearn = precision_recall_fscore_support(all_labels, all_preds, labels=classes_to_include, average='weighted')
     weighted_precision = weighted_metrics_sklearn[0]
     weighted_recall = weighted_metrics_sklearn[1]
     weighted_f1 = weighted_metrics_sklearn[2]
