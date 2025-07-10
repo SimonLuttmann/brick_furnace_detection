@@ -10,7 +10,7 @@
 
 
 Train Models
-1. [ ] Raw training of U-Net simply adjust LR, Batch Size, 
+1. [x] Raw training of U-Net simply adjust LR, Batch Size, 
 1. [ ] Training of U-Net with weighted Loss Fuction adjust LR, Batch Size
 
 
@@ -30,4 +30,4 @@ Brick Killn ~ 500 m² max
 2. [x] try adamw without sceduler and try differet weight decay values
 1. [ ] try with weighted loss function with unet
 2. [ ] create data augmentated images of train dataset (rotation)
-3. [ ] switch termination criteria to weighted f1 val
+3. [x] switch termination criteria to weighted f1 val
