@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --job-name=u-net_kiln_simon
+#SBATCH --job-name=u-net_adamw
 #SBATCH --partition=gpu2080
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --time=12:00:00
+#SBATCH --time=06:00:00
 #SBATCH --output=/home/s/sluttman/brick_furnace_detection/simon/logs/kiln-%j.log
 #SBATCH --error=/home/s/sluttman/brick_furnace_detection/simon/logs/kiln-%j.err
 
@@ -23,4 +23,4 @@ cd /home/s/sluttman/brick_furnace_detection
 
 echo "Starting python script..."
 
-python3 -m simon.launch_script
+python3 -m simon.launch_script_adamw
