@@ -3,10 +3,10 @@
 #SBATCH --partition=gpu2080
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=64G
+#SBATCH --mem=32G
 #SBATCH --time=12:00:00
-#SBATCH --output=/home/t/tstraus2/brick_furnace_detection/arne/logs/mask_check-%j.log
-#SBATCH --error=/home/t/tstraus2/brick_furnace_detection/arne/logs/mask_check-%j.err
+#SBATCH --output=/home/t/tstraus2/brick_furnace_detection/arne/logs/kiln-%j.log
+#SBATCH --error=/home/t/tstraus2/brick_furnace_detection/arne/logs/kiln-%j.err
 
 
 
@@ -23,4 +23,4 @@ cd /home/t/tstraus2/brick_furnace_detection
 
 echo "Starting python script..."
 
-python3 -m arne.check_null_values_mask
+python3 -m arne.launch_script_adamw_adjusted_termination

@@ -62,3 +62,5 @@ def calculate_and_log_performance(all_labels, all_preds, num_classes, epoch, wri
         plt.tight_layout()
         writer.add_figure('Metrics/Confusion_Matrix', fig, epoch)
         plt.close(fig)
+
+    return weighted_f1  # Return the weighted F1 score for further use if needed
