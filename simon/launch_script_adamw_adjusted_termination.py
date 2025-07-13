@@ -23,7 +23,7 @@ SEED = 42  # For reproducibility
 LR_ADAM = 1e-4  # Learning rate for Adam optimizer
 WD_ADAM = 5e-5 
 BATCH_SIZE = 8  # Batch size for training
-MAX_EPOCHS = 200  # Number of epochs for training
+MAX_EPOCHS = 301  # Number of epochs for training
 TERMINATTE_EARLY = 20  # Early stopping patience in epochs now based on 
 #LR_DECAY_EPOCHS = 100
 
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
     print_available_memory()
-    best_val_weighted_f1 = float("inf")
+    best_val_weighted_f1 = float("-inf")
     start_epoch = 0
     epochs_no_improve = 0  # Track epochs without improvement
 
