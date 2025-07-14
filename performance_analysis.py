@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import os
 def calculate_and_log_performance(all_labels, all_preds, num_classes, epoch, writer=None):
     """
     Calculate and log performance metrics from predictions and true labels.
@@ -15,12 +15,30 @@ def calculate_and_log_performance(all_labels, all_preds, num_classes, epoch, wri
         epoch: current epoch number
         writer: tensorboard writer (optional)
     """
-    # Calculate confusion matrix
+
+# Your existing confusion matrix code
     cm = confusion_matrix(all_labels, all_preds, labels=range(num_classes))
-    
+
     # Print confusion matrix
     print("\nConfusion Matrix:")
     print(cm)
+
+    # Create and save the confusion matrix plot
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
+                xticklabels=range(num_classes), 
+                yticklabels=range(num_classes))
+    plt.title('Confusion Matrix')
+    plt.xlabel('Predicted Label')
+    plt.ylabel('True Label')
+
+    # Save to home directory
+    home_dir = os.path.expanduser('~')
+    save_path = os.path.join(home_dir, 'henrik_model.png')
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.close()
+
+    print(f"Confusion matrix saved to: {save_path}")
     
     # Calculate per-class metrics from confusion matrix
     print("\nPer-class metrics:")
